@@ -48,14 +48,17 @@
         }
 
         async function processMathProblem(imageData) {
-            try {
-                const response = await axios.post('http://localhost:3000/api/process-math', { image: imageData });
-                displayResult(response.data);
-            } catch (err) {
-                console.error('Error processing image:', err);
-                alert('Error processing the image. Please try again.');
-            }
-        }
+    try {
+        const response = await axios.post('https://quickmath-ai.onrender.com/api/process-math', { image: imageData });
+
+        displayResult(response.data);
+    } catch (err) {
+        console.error('Error processing image:', err);
+        alert('Error processing the image. Please try again.');
+    }
+}
+
+
 
         function displayResult(result) {
             document.getElementById('camera-container').style.display = 'none';
